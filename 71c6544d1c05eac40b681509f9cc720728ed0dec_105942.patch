@@ -12,15 +12,6 @@ diff --git a/meson.build b/meson.build
 index cb6f17fa..6eeb5b95 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -277,7 +277,7 @@ else
- endif
- 
- if want_dbus
--    libdbus = dependency('dbus-1', required: true)
-+    libdbus = dependency('dbus-1', required: true,static : true)
-     pkgconfig_libs += libdbus
-     liblxc_dependencies += libdbus
-     srcconf.set10('HAVE_DBUS', libdbus.found())
 @@ -331,12 +331,12 @@ if not sgml2man.found()
  endif
  
